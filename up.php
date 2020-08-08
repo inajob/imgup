@@ -25,7 +25,7 @@ $output= curl_exec($curl);
 error_log($output);
 
 header('Content-type: application/json; charset=UTF-8;');
-header('Access-Control-Allow-Origin: https://inajob.github.io;');
+header('Access-Control-Allow-Origin: https://inajob.github.io');
 echo $output;
 ?>
 
