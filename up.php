@@ -1,6 +1,6 @@
 <?php
 define("IMGUR_TOKEN", getenv("IMGUR_TOKEN"));
-$title = $_GET['title']
+$title = $_GET['title'];
 
 $raw = file_get_contents('php://input');
 $POST_DATA = array(
