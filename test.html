@@ -7,7 +7,7 @@
         url = url.replace(/^data:image\/png;base64,/,'');
         $.ajax({
           method:'POST',
-          url:'http://web.inajob.tk/imgup/up.php',
+          url:'http://web.inajob.tk/imgup/up.php?title=' + encodeURIComponent("title") + "&desc=" + encodeURIComponent("desc http://google.co.jp/ hoge"),
           data: encodeURIComponent(url),
           dataType:'json',
           processData: false,
