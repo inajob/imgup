@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      function uploadImg(){
+        var url = $('#canv')[0].toDataURL();
+        url = url.replace(/^data:image\/png;base64,/,'');
+        $.ajax({
+          method:'POST',
+          url:'http://web.inajob.tk/imgup/up.php',
+          data: encodeURIComponent(url),
+          dataType:'json',
+          processData: false,
+          contentType: false,
+          success:function(o){
+            console.log(o);
+          }
+        });
+      }
+      $(function(){
+        // init script
+        let canvas = $("#canv")[0];
+        let ctx = canvas.getContext('2d');
+        ctx.fillRect(10, 10, 80, 80);
+
+        $('#sendbtn').click(function(){
+          uploadImg();
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <h1>test</h1>
+    <canvas style="border:solid;" id="canv" width="200px" height="200px"></canvas>
+    <button id="sendbtn">Send</button>
+  </body>
+</html>
