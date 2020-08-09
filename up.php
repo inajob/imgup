@@ -1,12 +1,14 @@
 <?php
 define("IMGUR_TOKEN", getenv("IMGUR_TOKEN"));
 $title = $_GET['title'];
+$description = $_GET['desc'];
 
 $raw = file_get_contents('php://input');
 $POST_DATA = array(
     'image' => urldecode($raw),
     'type' => 'base64',
-    'title' => $title
+    'title' => $title,
+    'description' => $description
 );
 $curl=curl_init("https://api.imgur.com/3/image");
 curl_setopt($curl,CURLOPT_POST, TRUE);
