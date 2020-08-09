@@ -6,7 +6,7 @@ $raw = file_get_contents('php://input');
 $POST_DATA = array(
     'image' => urldecode($raw),
     'type' => 'base64',
-    'title' => $tile
+    'title' => $title
 );
 $curl=curl_init("https://api.imgur.com/3/image");
 curl_setopt($curl,CURLOPT_POST, TRUE);
